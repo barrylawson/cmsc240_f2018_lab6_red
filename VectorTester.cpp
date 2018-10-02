@@ -31,13 +31,28 @@ int main()
    std::cout << "\tiv.put(25, 99):" << "\t\tiv.get(2): " << iv.get(2) << std::endl
       << std::endl;
 
+   std::cout << "--------------" << std::endl;
+   std::cout << "Testing get()"  << std::endl;
+   std::cout << "\tiv.get(0): " << iv.get(0) << " [15]" << std::endl;
+   std::cout << "\tiv.get(1): " << iv.get(1) << " [20]" << std::endl;
+   std::cout << "\tiv.get(2): " << iv.get(2) << " [30]" << std::endl;
 
-
+  //  try {
+  //    iv.get(50);
+  //  }
+  //  catch (const std::out_of_range& e) {
+  //    std::cerr << "Out of Range error: " << e.what() << std::endl;
+  //  }
 
 
    std::cout << "--------------" << std::endl;
    std::cout << "Testing size()"  << std::endl;
-   std::cout << "\tSize: "   << iv.size() << " [ ]" << std::endl;
+   std::cout << "\t\tSize: "   << iv.size() << " [3]" << std::endl;
+   iv.put(40);
+   std::cout << "iv.put(40):" << "\tSize: " << iv.size() << " [4]" << std::endl
+      << std::endl;
+
+   std::cout << "--------------" << std::endl;
 
    //-------------------------------------------------------------------------
 

@@ -4,6 +4,8 @@
 #include "IntegerVector.h"
 #include "DoubleVector.h"
 #include "CharacterVector.h"
+#include <iostream>   // for cout, endl, string (C++), to_string
+#include <stdexcept>  // for throwing Out of Range exception
 
 IntegerVector::IntegerVector()  {}
 IntegerVector::~IntegerVector() {}
@@ -17,6 +19,10 @@ int IntegerVector::size()
 // than [] so that an out_of_range error will be thrown for an invalid index
 int IntegerVector::get(int index)
 {
+  // if (index >= this->size()) {
+  //   std::string msg = "Index out of range: [" + index + "].";
+  //   throw std::out_of_range(msg.c_str());
+  // }
   return integerVector.at(index);
 }
 
