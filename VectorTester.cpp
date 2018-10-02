@@ -19,15 +19,21 @@ int main()
    std::cout << "Testing put()"  << std::endl;
    iv.put(10);
    iv.put(20);
-   std::cout << "\tiv.put(10):" << "\tiv.get(0): " << iv.get(0) << std::endl
+   std::cout << "\tiv.put(10):" << "\t\tiv.get(0): " << iv.get(0) << std::endl
       << std::endl;
-   std::cout << "\tiv.put(20):" << "\tiv.get(1): " << iv.get(1) << std::endl
+   std::cout << "\tiv.put(20):" << "\t\tiv.get(1): " << iv.get(1) << std::endl
       << std::endl;
-   iv.put(5, 0);
-   std::cout << "\tiv.put(5, 0):" << "\tiv.get(0): " << iv.get(0) << std::endl
+   iv.put(15, 0);
+   std::cout << "\tiv.put(15, 0):" << "\t\tiv.get(0): " << iv.get(0) << std::endl
       << std::endl;
    // test put() for illegal indices
-   iv.put(5, 0);
+   iv.put(30, 50);
+   std::cout << "\tiv.put(25, 99):" << "\t\tiv.get(2): " << iv.get(2) << std::endl
+      << std::endl;
+
+
+
+
 
    std::cout << "--------------" << std::endl;
    std::cout << "Testing size()"  << std::endl;
