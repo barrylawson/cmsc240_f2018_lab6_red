@@ -26,7 +26,7 @@ int main()
    iv.put(15, 0);
    std::cout << "\tiv.put(15, 0):" << "\t\tiv.get(0): " << iv.get(0) << std::endl
       << std::endl;
-   // test put() for illegal indices
+      // test put() for illegal indices
    iv.put(30, 50);
    std::cout << "\tiv.put(25, 99):" << "\t\tiv.get(2): " << iv.get(2) << std::endl
       << std::endl;
