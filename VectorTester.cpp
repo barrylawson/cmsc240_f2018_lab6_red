@@ -81,7 +81,7 @@ int main()
    std::cout << "-------------" << std::endl;
    std::cout << "DoubleVector:" << std::endl;
    std::cout << "-------------" << std::endl;
-   
+
    std::cout << "Testing Put"  << std::endl;
    dv.put(5.5);
    dv.put(10.1);
