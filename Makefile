@@ -2,7 +2,7 @@ EXECS = VectorTester
 OBJS = IntegerVector.o DoubleVector.o CharacterVector.o VectorTester.o
 
 CC = g++
-CCFLAGS = -Wall -Wno-deprecated -Werror=return-type -g
+CCFLAGS = -Wall -std=c++11 -Wno-deprecated -Werror=return-type -g
 
 all: $(EXECS)
 
