@@ -12,20 +12,11 @@ IntegerVector::~IntegerVector() {}
 
 int IntegerVector::size()
 {
-<<<<<<< HEAD
-   return 0;
-=======
   return integerVector.size();
->>>>>>> 5e48b0e5cf97b751ad971781554138fb14df17e4
 }
 
 // just return the integer at the specified index; use the at() method rather
 // than [] so that an out_of_range error will be thrown for an invalid index
-<<<<<<< HEAD
-int IntegerVector::get(int index)  
-{ 
-   return 0;
-=======
 int IntegerVector::get(int index)
 {
   // if (index >= this->size()) {
@@ -33,7 +24,6 @@ int IntegerVector::get(int index)
   //   throw std::out_of_range(msg.c_str());
   // }
   return integerVector.at(index);
->>>>>>> 5e48b0e5cf97b751ad971781554138fb14df17e4
 }
 
 // if index is size-legitimate, put the value at that index;
