@@ -8,7 +8,7 @@
 DoubleVector::DoubleVector()  {}
 DoubleVector::~DoubleVector() {}
 
-int DoubleVector::size() 
+int DoubleVector::size()
 {
    return doubleVector.size();
 }
