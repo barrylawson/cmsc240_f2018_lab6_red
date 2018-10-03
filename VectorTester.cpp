@@ -36,19 +36,24 @@ int main()
    std::cout << "Testing get()"  << std::endl;
    std::cout << "\tiv.get(0): " << iv.get(0) << " [15]" << std::endl;
    std::cout << "\tiv.get(1): " << iv.get(1) << " [20]" << std::endl;
-   std::cout << "\tiv.get(2): " << iv.get(2) << " [30]" << std::endl;
+   std::cout << "\tiv.get(2): " << iv.get(2) << " [30]" << std::endl << std::endl;
 
+   std::cout << "--------------" << std::endl;
+   std::cout << "Testing out_of_range" << std::endl;
+   std::cout << "\tiv.get(50): ";
    try {
      iv.get(50);
    }
    catch (const std::out_of_range& oor) {
-    //  if (50 >= iv.size()) {
-    //    std::string msg = "Index out of range: [" + 50 + "].";
-    //    throw std::out_of_range(msg.c_str());
-    //  }
-     std::cerr << "Out of Range error: " << oor.what() << std::endl;
+     std::cerr << "Out of Range error: " << oor.what() << std::endl << std::endl;
    }
-
+   std::cout << "\tiv.get(-1): ";
+   try {
+     iv.get(-1);
+   }
+   catch (const std::out_of_range& oor) {
+     std::cerr << "Out of Range error: " << oor.what() << std::endl << std::endl;
+   }
 
    std::cout << "--------------" << std::endl;
    std::cout << "Testing size()"  << std::endl;

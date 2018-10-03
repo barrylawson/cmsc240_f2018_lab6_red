@@ -28,6 +28,10 @@ int IntegerVector::get(int index)
 =======
 int IntegerVector::get(int index)
 {
+  // if (index >= this->size()) {
+  //   std::string msg = "Index out of range: [" + index + "].";
+  //   throw std::out_of_range(msg.c_str());
+  // }
   return integerVector.at(index);
 >>>>>>> 5e48b0e5cf97b751ad971781554138fb14df17e4
 }
