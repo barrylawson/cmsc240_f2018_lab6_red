@@ -67,10 +67,24 @@ int main()
    //-------------------------------------------------------------------------
 
    // test CharacterVector: put, get, size, out_of_range
-
    std::cout << std::endl;
    std::cout << "----------------" << std::endl;
    std::cout << "CharacterVector:" << std::endl;
+   std::cout << "The size of the vector: " << cv.size() << std::endl;
+   try {
+      std::cout << "The char at index 0: " << cv.get(0) << std::endl;
+   } catch(std::exception& e) {
+      std::cerr << "exception caught: " << e.what() << std::endl;
+   }
+   cv.put('a');
+   cv.put('b');
+   cv.put('c', 5);
+   std::cout << "The size of the vector: " << cv.size() << std::endl;
+   std::cout << "The char at index 2: " << cv.get(2) << std::endl;
+   cv.put('f', 1);
+   std::cout << "The size of the vector: " << cv.size() << std::endl;
+   std::cout << "The char at index 2: " << cv.get(2) << std::endl;
+   std::cout << "The char at index 1: " << cv.get(1) << std::endl;
    std::cout << "----------------" << std::endl;
 
    //-------------------------------------------------------------------------
