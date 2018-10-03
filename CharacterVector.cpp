@@ -20,11 +20,15 @@ int CharacterVector::size()
 // than [] so that an out_of_range error will be thrown for an invalid index
 char CharacterVector::get(int index)
 {
+//<<<<<<< HEAD
    if(index >= characterVector.size()) {
-      throw out_of_range("Invalid Index");
+      throw out_of_range("Invalid Index: Must be less than the size of the vector!");
    } else {
       return characterVector.at(index);
    }
+//=======
+//   return '0';
+//>>>>>>> 824b5186de8775049cc72bbf22f0f302eb95e24d
 }
 
 // if index is size-legitimate, put the value at that index;
@@ -60,6 +64,12 @@ void CharacterVector::appendIntegerVector(IntegerVector& integerVector)
 // character to characterVector
 void CharacterVector::appendDoubleVector(DoubleVector& doubleVector)
 {
+    int length = doubleVector.size();
+    char newChar;
+    for(int i = 0; i < length; i++) {
+        newChar = static_cast<char>(doubleVector.get(i));
+        characterVector.push_back(newChar);
+  }
 }
 
 #endif
