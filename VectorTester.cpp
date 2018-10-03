@@ -2,6 +2,7 @@
 #include "IntegerVector.h"
 #include "DoubleVector.h"
 #include "CharacterVector.h"
+#include <stdexcept>  // for throwing Out of Range exception
 
 int main()
 {
@@ -37,12 +38,16 @@ int main()
    std::cout << "\tiv.get(1): " << iv.get(1) << " [20]" << std::endl;
    std::cout << "\tiv.get(2): " << iv.get(2) << " [30]" << std::endl;
 
-  //  try {
-  //    iv.get(50);
-  //  }
-  //  catch (const std::out_of_range& e) {
-  //    std::cerr << "Out of Range error: " << e.what() << std::endl;
-  //  }
+   try {
+     iv.get(50);
+   }
+   catch (const std::out_of_range& oor) {
+    //  if (50 >= iv.size()) {
+    //    std::string msg = "Index out of range: [" + 50 + "].";
+    //    throw std::out_of_range(msg.c_str());
+    //  }
+     std::cerr << "Out of Range error: " << oor.what() << std::endl;
+   }
 
 
    std::cout << "--------------" << std::endl;
