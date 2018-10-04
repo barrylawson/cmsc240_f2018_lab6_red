@@ -25,7 +25,7 @@ int main()
    iv.put(15, 0);
    std::cout << "\tiv.put(15, 0):" << "\t\tiv.get(0): " << iv.get(0) << std::endl;
 
-      // test put() for illegal indices
+  // test put() for illegal indices
    iv.put(30, 50);
    std::cout << "\tiv.put(25, 99):" << "\t\tiv.get(2): " << iv.get(2) << std::endl;
 
@@ -117,6 +117,27 @@ int main()
    std::cout << std::endl;
    std::cout << "--------------------------" << std::endl;
    std::cout << "appended-to IntegerVector:" << std::endl;
+   std::cout << "\tappended CharacterVector: ";
+   iv2.appendCharacterVector(cv);
+   for (int i = 0; i < iv2.size(); i++) {
+      if(iv2.get(i)!=cv.get(i)) {
+        std::cout << "Error in appending";
+      }
+      std::cout << iv2.get(i) << "[" << cv.get(i) << "] ";
+   }
+   std::cout << "\tSize: IV[" << iv2.size() << "] CV["<< cv.size() << "]" <<std::endl;
+
+   int INDEX = iv2.size();
+   std::cout << "\tappended DoubleVector: ";
+   iv2.appendDoubleVector(dv);
+   for (int i = INDEX; i < dv.size(); i++) {
+      if(iv2.get(INDEX)!=dv.get(INDEX)) {
+        std::cout << "Error in appending";
+      }
+      std::cout << iv2.get(i) << "[" << dv.get(i) << "] ";
+   }
+   std::cout << "\tSize: IV[" << iv2.size() << "] DV["<< dv.size() << "]" <<std::endl;
+
    std::cout << "--------------------------" << std::endl;
 
    //-------------------------------------------------------------------------
