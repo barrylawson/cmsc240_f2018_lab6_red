@@ -21,7 +21,7 @@ int IntegerVector::size()
 int IntegerVector::get(int index)
 {
   if (index >= this->size() || index < 0) {
-    std::string msg = "Index out of range: [" + std::to_string(index) + "]. " +
+    std::string msg = "Invalid index: [" + std::to_string(index) + "]. " +
       "Size: [" + std::to_string(this->size()) + "]. ";
     throw std::out_of_range(msg.c_str());
   }

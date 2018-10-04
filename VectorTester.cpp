@@ -20,47 +20,53 @@ int main()
    std::cout << "Testing put()"  << std::endl;
    iv.put(10);
    iv.put(20);
-   std::cout << "\tiv.put(10):" << "\t\tiv.get(0): " << iv.get(0) << std::endl
-      << std::endl;
-   std::cout << "\tiv.put(20):" << "\t\tiv.get(1): " << iv.get(1) << std::endl
-      << std::endl;
+   std::cout << "\tiv.put(10):" << "\t\tiv.get(0): " << iv.get(0) << std::endl;
+   std::cout << "\tiv.put(20):" << "\t\tiv.get(1): " << iv.get(1) << std::endl;
    iv.put(15, 0);
-   std::cout << "\tiv.put(15, 0):" << "\t\tiv.get(0): " << iv.get(0) << std::endl
-      << std::endl;
+   std::cout << "\tiv.put(15, 0):" << "\t\tiv.get(0): " << iv.get(0) << std::endl;
+
       // test put() for illegal indices
    iv.put(30, 50);
-   std::cout << "\tiv.put(25, 99):" << "\t\tiv.get(2): " << iv.get(2) << std::endl
-      << std::endl;
+   std::cout << "\tiv.put(25, 99):" << "\t\tiv.get(2): " << iv.get(2) << std::endl;
 
    std::cout << "--------------" << std::endl;
    std::cout << "Testing get()"  << std::endl;
    std::cout << "\tiv.get(0): " << iv.get(0) << " [15]" << std::endl;
    std::cout << "\tiv.get(1): " << iv.get(1) << " [20]" << std::endl;
-   std::cout << "\tiv.get(2): " << iv.get(2) << " [30]" << std::endl << std::endl;
+   std::cout << "\tiv.get(2): " << iv.get(2) << " [30]" << std::endl;
 
    std::cout << "--------------" << std::endl;
    std::cout << "Testing out_of_range" << std::endl;
-   std::cout << "\tiv.get(50): ";
+   // test oor get() for index>size-1
+   std::cout << "\tiv.get(100): ";
    try {
-     iv.get(50);
+     iv.get(100);
    }
    catch (const std::out_of_range& oor) {
-     std::cerr << "Out of Range error: " << oor.what() << std::endl << std::endl;
+     std::cerr << "\tOut of Range error: " << oor.what() << std::endl;
    }
+   // test oor get() for index==size
+   std::cout << "\tiv.get(3): ";
+   try {
+     iv.get(3);
+   }
+   catch (const std::out_of_range& oor) {
+     std::cerr << "\tOut of Range error: " << oor.what() << std::endl;
+   }
+   // test oor get() for negative index
    std::cout << "\tiv.get(-1): ";
    try {
      iv.get(-1);
    }
    catch (const std::out_of_range& oor) {
-     std::cerr << "Out of Range error: " << oor.what() << std::endl << std::endl;
+     std::cerr << "\tOut of Range error: " << oor.what() << std::endl << std::endl;
    }
 
    std::cout << "--------------" << std::endl;
    std::cout << "Testing size()"  << std::endl;
    std::cout << "\t\tSize: "   << iv.size() << " [3]" << std::endl;
    iv.put(40);
-   std::cout << "iv.put(40):" << "\tSize: " << iv.size() << " [4]" << std::endl
-      << std::endl;
+   std::cout << "iv.put(40):" << "\tSize: " << iv.size() << " [4]" << std::endl;
 
    std::cout << "--------------" << std::endl;
 
@@ -101,7 +107,7 @@ int main()
    dv.put(10.1);
    dv.put(15.5);
    std::cout << "Results of Put:" << std::endl;
-   std::cout << ""
+   std::cout << "";
 
    //-------------------------------------------------------------------------
 
