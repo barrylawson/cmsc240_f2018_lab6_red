@@ -125,14 +125,15 @@ int main()
       }
       std::cout << iv2.get(i) << "[" << cv.get(i) << "] ";
    }
-   std::cout << "\tSize: IV[" << iv2.size() << "] CV["<< cv.size() << "]" <<std::endl;
-   int INDEX = iv2.size();
+   std::cout << "\t: Size: IV[" << iv2.size() << "] CV["<< cv.size() << "]" <<std::endl;
+
+   const int INDEX = iv2.size();
    std::cout << "\tappended DoubleVector: ";
    iv2.appendDoubleVector(dv);
-   for (int i = INDEX; i < dv.size(); i++) {
-      std::cout << iv2.get(INDEX) << "[" << dv.get(INDEX) << "] ";
+   for (int i = 0; i < dv.size(); i++) {
+     std::cout << iv2.get(i+INDEX) << "[" << dv.get(i) << "] ";
    }
-   std::cout << "\tSize: IV[" << iv2.size() << "] DV["<< dv.size() << "]" <<std::endl;
+   std::cout << "\t: Size: IV[" << iv2.size() << "] DV["<< dv.size() << "]" <<std::endl;
 
    std::cout << "--------------------------" << std::endl;
 
