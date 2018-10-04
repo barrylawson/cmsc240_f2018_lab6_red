@@ -27,7 +27,7 @@ int main()
 
   // test put() for illegal indices
    iv.put(30, 50);
-   std::cout << "\tiv.put(25, 99):" << "\t\tiv.get(2): " << iv.get(2) << std::endl;
+   std::cout << "\tiv.put(30, 50):" << "\t\tiv.get(2): " << iv.get(2) << std::endl;
 
    std::cout << "--------------" << std::endl;
    std::cout << "Testing get()"  << std::endl;

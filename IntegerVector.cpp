@@ -4,7 +4,6 @@
 #include "IntegerVector.h"
 #include "DoubleVector.h"
 #include "CharacterVector.h"
-#include <iostream>   // for cout, endl, string (C++), to_string
 #include <string>
 #include <stdexcept>  // for throwing Out of Range exception
 
