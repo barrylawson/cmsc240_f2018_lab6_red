@@ -76,21 +76,32 @@ int main()
    std::cout << std::endl;
    std::cout << "----------------" << std::endl;
    std::cout << "CharacterVector:" << std::endl;
-   std::cout << "The size of the vector: " << cv.size() << std::endl;
+   std::cout << "***** Testing initial size [0] *****" << std::endl;
+   std::cout << "\tThe size of the vector: " << cv.size() << std::endl;
+   std::cout << "***** Testing 'get' method error handling [Out of Range error] *****" << std::endl;
    try {
-      std::cout << "The char at index 0: " << cv.get(0) << std::endl;
+      std::cout << "\tThe char at index 0: " << cv.get(0) << std::endl;
    } catch(std::exception& e) {
-      std::cerr << "Out of Range error: " << e.what() << std::endl;
+      std::cerr << "\tOut of Range error: " << e.what() << std::endl;
    }
+
    cv.put('a');
    cv.put('b');
    cv.put('c', 5);
-   std::cout << "The size of the vector: " << cv.size() << std::endl;
-   std::cout << "The char at index 2: " << cv.get(2) << std::endl;
+
+   std::cout << "***** Testing the size after putting 3 characters [3] *****" << std::endl;
+   std::cout << "\tThe size of the vector: " << cv.size() << std::endl;
+   std::cout << "***** Testing 'get' method [c] *****" << std::endl;
+   std::cout << "\tThe char at index 2: " << cv.get(2) << std::endl;
+
    cv.put('f', 1);
-   std::cout << "The size of the vector: " << cv.size() << std::endl;
-   std::cout << "The char at index 2: " << cv.get(2) << std::endl;
-   std::cout << "The char at index 1: " << cv.get(1) << std::endl;
+
+   std::cout << "***** Testing the size after replacing one of the characters [3] *****" << std::endl;
+   std::cout << "\tThe size of the vector: " << cv.size() << std::endl;
+   std::cout << "***** Testing 'get' method [c] *****" << std::endl;
+   std::cout << "\tThe char at index 2: " << cv.get(2) << std::endl;
+   std::cout << "***** Testing 'get' method [f] *****" << std::endl;
+   std::cout << "\tThe char at index 1: " << cv.get(1) << std::endl;
    std::cout << "----------------" << std::endl;
 
    //-------------------------------------------------------------------------
@@ -141,10 +152,38 @@ int main()
 
    // using empty CharacterVector, test appending iv & dv from above
    CharacterVector cv2;
+   iv.put(65, 0);
+   iv.put(66, 1);
+   iv.put(67, 2);
+   iv.put(68, 3);
+   dv.put(69.3, 0);
+   dv.put(70.0, 1);
+   dv.put(71.2, 2);
+   dv.put(72.9, 3);
 
    std::cout << std::endl;
    std::cout << "----------------------------" << std::endl;
    std::cout << "appended-to CharacterVector:" << std::endl;
+   std::cout << "\tappended IntegerVector: ";
+   cv2.appendIntegerVector(iv);
+   for (int i = 0; i < iv.size(); i++) {
+      if(cv2.get(i)!= iv.get(i)) {
+        std::cout << "Error in appending";
+      }
+      std::cout << cv2.get(i) << "[" << iv.get(i) << "] ";
+   }
+   std::cout << "\n \tSize: CV[" << cv2.size() << "] IV["<< iv.size() << "]" << std::endl;
+   std::cout << std::endl;
+
+   std::cout << "\tappended DoubleVector: ";
+   const int INDEX2 = cv2.size();
+   cv2.appendDoubleVector(dv);
+   for (int i = 0; i < dv.size(); i++) {
+      std::cout << cv2.get(i + INDEX2) << "[" << dv.get(i) << "] ";
+   }
+   std::cout << "\n \tSize: CV[" << cv2.size() << "] DV["<< dv.size() << "]" << std::endl;
+   std::cout << std::endl;
+
    std::cout << "----------------------------" << std::endl;
 
    //-------------------------------------------------------------------------
