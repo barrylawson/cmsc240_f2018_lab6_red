@@ -80,7 +80,7 @@ int main()
    try {
       std::cout << "The char at index 0: " << cv.get(0) << std::endl;
    } catch(std::exception& e) {
-      std::cerr << "exception caught: " << e.what() << std::endl;
+      std::cerr << "Out of Range error: " << e.what() << std::endl;
    }
    cv.put('a');
    cv.put('b');

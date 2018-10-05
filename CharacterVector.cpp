@@ -4,7 +4,7 @@
 #include "IntegerVector.h"
 #include "DoubleVector.h"
 #include "CharacterVector.h"
-
+#include <string>
 #include <stdexcept>
 using namespace std;
 
@@ -21,8 +21,10 @@ int CharacterVector::size()
 
 char CharacterVector::get(int index)
 {
-   if(index >= characterVector.size()) {
-      throw out_of_range("Invalid Index: Must be less than the size of the vector!");
+   if(index >= characterVector.size() || index < 0) {
+      string msg = "Invalid index: [" + to_string(index) + "]. " +
+        "Size: [" + to_string(characterVector.size()) + "]. ";
+      throw out_of_range(msg.c_str());
    } else {
       return characterVector.at(index);
    }
