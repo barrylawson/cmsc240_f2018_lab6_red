@@ -59,7 +59,7 @@ int main()
      iv.get(-1);
    }
    catch (const std::out_of_range& oor) {
-     std::cerr << "\tOut of Range error: " << oor.what() << std::endl << std::endl;
+     std::cerr << "\tOut of Range error: " << oor.what() << std::endl;
    }
 
    std::cout << "--------------" << std::endl;
@@ -136,7 +136,8 @@ int main()
       }
       std::cout << iv2.get(i) << "[" << cv.get(i) << "] ";
    }
-   std::cout << "\t: Size: IV[" << iv2.size() << "] CV["<< cv.size() << "]" <<std::endl;
+   std::cout << std::endl << "\t\tSize: IV[" << iv2.size() << "] CV["
+      << cv.size() << "]" <<std::endl << std::endl;
 
    const int INDEX = iv2.size();
    std::cout << "\tappended DoubleVector: ";
@@ -144,7 +145,8 @@ int main()
    for (int i = 0; i < dv.size(); i++) {
      std::cout << iv2.get(i+INDEX) << "[" << dv.get(i) << "] ";
    }
-   std::cout << "\t: Size: IV[" << iv2.size() << "] DV["<< dv.size() << "]" <<std::endl;
+   std::cout << std::endl << "\t\tSize: IV[" << iv2.size() << "] DV["
+      << dv.size() << "]" << std::endl << std::endl;
 
    std::cout << "--------------------------" << std::endl;
 
