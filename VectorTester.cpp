@@ -18,22 +18,22 @@ int main()
    std::cout << "IntegerVector:" << std::endl;
    std::cout << "--------------" << std::endl;
    std::cout << "Testing put()"  << std::endl;
-   iv.put(10);
-   iv.put(20);
-   std::cout << "\tiv.put(10):" << "\t\tiv.get(0): " << iv.get(0) << std::endl;
-   std::cout << "\tiv.put(20):" << "\t\tiv.get(1): " << iv.get(1) << std::endl;
-   iv.put(15, 0);
-   std::cout << "\tiv.put(15, 0):" << "\t\tiv.get(0): " << iv.get(0) << std::endl;
+   iv.put(65);
+   iv.put(70);
+   std::cout << "\tiv.put(65):" << "\t\tiv.get(0): " << iv.get(0) << std::endl;
+   std::cout << "\tiv.put(70):" << "\t\tiv.get(1): " << iv.get(1) << std::endl;
+   iv.put(75, 0);
+   std::cout << "\tiv.put(75, 0):" << "\t\tiv.get(0): " << iv.get(0) << std::endl;
 
   // test put() for illegal indices
-   iv.put(30, 50);
-   std::cout << "\tiv.put(30, 50):" << "\t\tiv.get(2): " << iv.get(2) << std::endl;
+   iv.put(85, 50);
+   std::cout << "\tiv.put(85, 50):" << "\t\tiv.get(2): " << iv.get(2) << std::endl;
 
    std::cout << "--------------" << std::endl;
    std::cout << "Testing get()"  << std::endl;
-   std::cout << "\tiv.get(0): " << iv.get(0) << " [15]" << std::endl;
-   std::cout << "\tiv.get(1): " << iv.get(1) << " [20]" << std::endl;
-   std::cout << "\tiv.get(2): " << iv.get(2) << " [30]" << std::endl;
+   std::cout << "\tiv.get(0): " << iv.get(0) << " [75]" << std::endl;
+   std::cout << "\tiv.get(1): " << iv.get(1) << " [70]" << std::endl;
+   std::cout << "\tiv.get(2): " << iv.get(2) << " [85]" << std::endl;
 
    std::cout << "--------------" << std::endl;
    std::cout << "Testing out_of_range" << std::endl;
@@ -65,8 +65,8 @@ int main()
    std::cout << "--------------" << std::endl;
    std::cout << "Testing size()"  << std::endl;
    std::cout << "\t\tSize: "   << iv.size() << " [3]" << std::endl;
-   iv.put(40);
-   std::cout << "iv.put(40):" << "\tSize: " << iv.size() << " [4]" << std::endl;
+   iv.put(90);
+   std::cout << "iv.put(90):" << "\tSize: " << iv.size() << " [4]" << std::endl;
 
    std::cout << "--------------" << std::endl;
 
