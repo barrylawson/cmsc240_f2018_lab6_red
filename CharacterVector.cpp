@@ -21,9 +21,9 @@ int CharacterVector::size()
 
 char CharacterVector::get(int index)
 {
-   if(index >= characterVector.size() || index < 0) {
+   if(index >= this->size() || index < 0) {
       string msg = "Invalid index: [" + to_string(index) + "]. " +
-        "Size: [" + to_string(characterVector.size()) + "]. ";
+        "Size: [" + to_string(this->size()) + "]. ";
       throw out_of_range(msg.c_str());
    } else {
       return characterVector.at(index);
@@ -34,7 +34,7 @@ char CharacterVector::get(int index)
 // otherwise, use push_back to append to the end of the vector
 void CharacterVector::put(char value, int index)
 {
-    if(index >= characterVector.size()) {
+    if(index >= this->size()) {
         characterVector.push_back(value);
     } else {
         characterVector.at(index) = value;

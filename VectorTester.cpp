@@ -115,10 +115,51 @@ int main()
 
    std::cout << "Testing Put"  << std::endl;
    dv.put(5.5);
+   std::cout << "\tput(5.5) - size: " << dv.size() << std::endl;
+   
    dv.put(10.1);
+   std::cout << "\tput(10.1) - size: " << dv.size()<< std::endl;
+  
    dv.put(15.5);
-   std::cout << "Results of Put:" << std::endl;
-   std::cout << "";
+   std::cout << "\tput(15.5) - size: " << dv.size() << std::endl;
+   
+   std::cout << "-------------" << std::endl;
+
+   std::cout << "Testing Get"  << std::endl;
+
+   std::cout << "\tget(0): " << dv.get(0) << "[5.5]" << std::endl;
+   std::cout << "\tget(1): " << dv.get(1) << "[10.1]" << std::endl;
+   std::cout << "\tget(2): " << dv.get(2) << "[15.5]" << std::endl;
+   
+   std::cout << "Testing Out of Range" << std::endl;
+   
+
+   std::cout << "\tget(4): ";
+   try {
+      dv.get(4);
+   } catch(const std::out_of_range& oor) {
+      std::cout << std::endl;
+      std::cerr << "\tOut of Range error: " << oor.what() << std::endl;
+   }
+   
+   std::cout << "\tget(-1): ";
+   try {
+     dv.get(-1);
+   }
+   catch (const std::out_of_range& oor) {
+     std::cout << std::endl;
+     std::cerr << "\tOut of Range error: " << oor.what() << std::endl;
+   }
+
+   std::cout << "------------" << std::endl;
+   
+   std::cout << "Testing Size" << std::endl;
+   std::cout << "size(): " << dv.size() << "[3]" << std::endl;
+   dv.put(1.1);
+   dv.put(7.7);
+   std::cout << "size(): " << dv.size() << "[5]" << std::endl;
+   
+
 
    //-------------------------------------------------------------------------
 
@@ -192,10 +233,38 @@ int main()
 
    // using empty DoubleVector, test appending iv & cv from above
    DoubleVector dv2;
+   cv.put('a', 0);
+   cv.put('b', 1);
+   cv.put('c', 2);
+   cv.put('d', 3);
+   iv.put(11, 0);
+   iv.put(22, 1);
+   iv.put(33, 2);
+   iv.put(44, 3);
 
    std::cout << std::endl;
    std::cout << "-------------------------" << std::endl;
    std::cout << "appended-to DoubleVector:" << std::endl;
+   std::cout << "\tappended IntegerVector: "; 
+   dv2.appendIntegerVector(iv);
+   for (int i = 0; i < iv.size(); i++) {
+      if(dv2.get(i)!=iv.get(i)) {
+        std::cout << "Error in appending";
+      }
+      std::cout << dv2.get(i) << "[" << iv.get(i) << "] ";
+   }
+   std::cout << std::endl << "\t\tSize: DV[" << dv2.size() << "] IV["
+      << iv.size() << "]" << std::endl << std::endl;
+
+   const int INDEX3 = dv2.size();
+   std::cout << "\tappended CharacterVector: ";
+   dv2.appendCharacterVector(cv);
+   for (int i = 0; i < cv.size(); i++) {
+     std::cout << dv2.get(i+INDEX3) << "[" << cv.get(i) << "] ";
+   }
+   std::cout << std::endl << "\t\tSize: DV[" << dv2.size() << "] CV["
+      << cv.size() << "]" << std::endl << std::endl;
+
    std::cout << "-------------------------" << std::endl;
 
    //-------------------------------------------------------------------------

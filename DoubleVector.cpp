@@ -4,6 +4,9 @@
 #include "IntegerVector.h"
 #include "DoubleVector.h"
 #include "CharacterVector.h"
+#include <stdexcept>
+using namespace std;
+
 
 DoubleVector::DoubleVector()  {}
 DoubleVector::~DoubleVector() {}
@@ -18,6 +21,11 @@ int DoubleVector::size()
 
 double DoubleVector::get(int index)
 {
+  if (index >= this->size() || index < 0) {
+    string msg = "Invalid index: [" + to_string(index) + "]. " +
+      "Size: [" + to_string(this->size()) + "]. ";
+    throw out_of_range(msg.c_str());
+  }
    return doubleVector.at(index);
 }
 
