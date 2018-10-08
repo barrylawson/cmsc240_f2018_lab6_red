@@ -8,27 +8,16 @@
 CharacterVector::CharacterVector()  {}
 CharacterVector::~CharacterVector() {}
 
-<<<<<<< HEAD
 int CharacterVector::size() 
 {  
-=======
-int CharacterVector::size()
-{
->>>>>>> 5e48b0e5cf97b751ad971781554138fb14df17e4
    return 0;
 }
 
 // just return the character at the specified index; use the at() method rather
 // than [] so that an out_of_range error will be thrown for an invalid index
-<<<<<<< HEAD
-char CharacterVector::get(int index) 
-{ 
-   return 0;
-=======
 char CharacterVector::get(int index)
 {
    return '0';
->>>>>>> 5e48b0e5cf97b751ad971781554138fb14df17e4
 }
 
 // if index is size-legitimate, put the value at that index;
