@@ -18,22 +18,22 @@ int main()
    std::cout << "IntegerVector:" << std::endl;
    std::cout << "--------------" << std::endl;
    std::cout << "Testing put()"  << std::endl;
-   iv.put(10);
-   iv.put(20);
-   std::cout << "\tiv.put(10):" << "\t\tiv.get(0): " << iv.get(0) << std::endl;
-   std::cout << "\tiv.put(20):" << "\t\tiv.get(1): " << iv.get(1) << std::endl;
-   iv.put(15, 0);
-   std::cout << "\tiv.put(15, 0):" << "\t\tiv.get(0): " << iv.get(0) << std::endl;
+   iv.put(65);
+   iv.put(70);
+   std::cout << "\tiv.put(65):" << "\t\tiv.get(0): " << iv.get(0) << std::endl;
+   std::cout << "\tiv.put(70):" << "\t\tiv.get(1): " << iv.get(1) << std::endl;
+   iv.put(75, 0);
+   std::cout << "\tiv.put(75, 0):" << "\t\tiv.get(0): " << iv.get(0) << std::endl;
 
   // test put() for illegal indices
-   iv.put(30, 50);
-   std::cout << "\tiv.put(30, 50):" << "\t\tiv.get(2): " << iv.get(2) << std::endl;
+   iv.put(85, 50);
+   std::cout << "\tiv.put(85, 50):" << "\t\tiv.get(2): " << iv.get(2) << std::endl;
 
    std::cout << "--------------" << std::endl;
    std::cout << "Testing get()"  << std::endl;
-   std::cout << "\tiv.get(0): " << iv.get(0) << " [15]" << std::endl;
-   std::cout << "\tiv.get(1): " << iv.get(1) << " [20]" << std::endl;
-   std::cout << "\tiv.get(2): " << iv.get(2) << " [30]" << std::endl;
+   std::cout << "\tiv.get(0): " << iv.get(0) << " [75]" << std::endl;
+   std::cout << "\tiv.get(1): " << iv.get(1) << " [70]" << std::endl;
+   std::cout << "\tiv.get(2): " << iv.get(2) << " [85]" << std::endl;
 
    std::cout << "--------------" << std::endl;
    std::cout << "Testing out_of_range" << std::endl;
@@ -65,8 +65,8 @@ int main()
    std::cout << "--------------" << std::endl;
    std::cout << "Testing size()"  << std::endl;
    std::cout << "\t\tSize: "   << iv.size() << " [3]" << std::endl;
-   iv.put(40);
-   std::cout << "iv.put(40):" << "\tSize: " << iv.size() << " [4]" << std::endl;
+   iv.put(90);
+   std::cout << "iv.put(90):" << "\tSize: " << iv.size() << " [4]" << std::endl;
 
    std::cout << "--------------" << std::endl;
 
@@ -78,9 +78,15 @@ int main()
    std::cout << "CharacterVector:" << std::endl;
    std::cout << "***** Testing initial size [0] *****" << std::endl;
    std::cout << "\tThe size of the vector: " << cv.size() << std::endl;
-   std::cout << "***** Testing 'get' method error handling [Out of Range error] *****" << std::endl;
+   std::cout << "***** Testing 'get' method error handling [Out of Range error] (index >= size) *****" << std::endl;
    try {
       std::cout << "\tThe char at index 0: " << cv.get(0) << std::endl;
+   } catch(std::exception& e) {
+      std::cerr << "\tOut of Range error: " << e.what() << std::endl;
+   }
+   std::cout << "***** Testing 'get' method error handling [Out of Range error] (negative index) *****" << std::endl;
+   try {
+      std::cout << "\tThe char at index -1: " << cv.get(-1) << std::endl;
    } catch(std::exception& e) {
       std::cerr << "\tOut of Range error: " << e.what() << std::endl;
    }
@@ -108,6 +114,7 @@ int main()
 
    // test DoubleVector: put, get, size, out_of_range
 
+
    std::cout << std::endl;
    std::cout << "-------------" << std::endl;
    std::cout << "DoubleVector:" << std::endl;
@@ -115,24 +122,22 @@ int main()
 
    std::cout << "Testing Put"  << std::endl;
    dv.put(5.5);
-   std::cout << "\tput(5.5) - size: " << dv.size() << std::endl;
-   
+   std::cout << "\tput(5.5) - size: " << dv.size() << std::endl; 
+
    dv.put(10.1);
    std::cout << "\tput(10.1) - size: " << dv.size()<< std::endl;
-  
+
    dv.put(15.5);
    std::cout << "\tput(15.5) - size: " << dv.size() << std::endl;
-   
+
    std::cout << "-------------" << std::endl;
 
    std::cout << "Testing Get"  << std::endl;
-
    std::cout << "\tget(0): " << dv.get(0) << "[5.5]" << std::endl;
    std::cout << "\tget(1): " << dv.get(1) << "[10.1]" << std::endl;
    std::cout << "\tget(2): " << dv.get(2) << "[15.5]" << std::endl;
-   
+
    std::cout << "Testing Out of Range" << std::endl;
-   
 
    std::cout << "\tget(4): ";
    try {
@@ -141,7 +146,7 @@ int main()
       std::cout << std::endl;
       std::cerr << "\tOut of Range error: " << oor.what() << std::endl;
    }
-   
+
    std::cout << "\tget(-1): ";
    try {
      dv.get(-1);
@@ -150,15 +155,13 @@ int main()
      std::cout << std::endl;
      std::cerr << "\tOut of Range error: " << oor.what() << std::endl;
    }
-
    std::cout << "------------" << std::endl;
-   
+
    std::cout << "Testing Size" << std::endl;
    std::cout << "size(): " << dv.size() << "[3]" << std::endl;
    dv.put(1.1);
    dv.put(7.7);
    std::cout << "size(): " << dv.size() << "[5]" << std::endl;
-   
 
 
    //-------------------------------------------------------------------------
@@ -232,6 +235,7 @@ int main()
    //-------------------------------------------------------------------------
 
    // using empty DoubleVector, test appending iv & cv from above
+   
    DoubleVector dv2;
    cv.put('a', 0);
    cv.put('b', 1);

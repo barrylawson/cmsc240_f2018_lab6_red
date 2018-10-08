@@ -12,6 +12,7 @@ CharacterVector::CharacterVector() {}
 CharacterVector::~CharacterVector() {}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 int CharacterVector::size()
 {
    return characterVector.size();
@@ -20,11 +21,23 @@ int CharacterVector::size()
 {  
    return 0;
 >>>>>>> jd4mx
+=======
+int CharacterVector::size()
+{
+   return characterVector.size();
+>>>>>>> jd4mx
 }
 
 // just return the character at the specified index; use the at() method rather
 // than [] so that an out_of_range error will be thrown for an invalid index
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+char CharacterVector::get(int index)
+{
+   return '0';
+}
+>>>>>>> jd4mx
 
 char CharacterVector::get(int index)
 {
@@ -35,10 +48,13 @@ char CharacterVector::get(int index)
    } else {
       return characterVector.at(index);
    }
+<<<<<<< HEAD
 =======
 char CharacterVector::get(int index)
 {
    return '0';
+>>>>>>> jd4mx
+=======
 >>>>>>> jd4mx
 }
 
