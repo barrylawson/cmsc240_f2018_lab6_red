@@ -78,9 +78,15 @@ int main()
    std::cout << "CharacterVector:" << std::endl;
    std::cout << "***** Testing initial size [0] *****" << std::endl;
    std::cout << "\tThe size of the vector: " << cv.size() << std::endl;
-   std::cout << "***** Testing 'get' method error handling [Out of Range error] *****" << std::endl;
+   std::cout << "***** Testing 'get' method error handling [Out of Range error] (index >= size) *****" << std::endl;
    try {
       std::cout << "\tThe char at index 0: " << cv.get(0) << std::endl;
+   } catch(std::exception& e) {
+      std::cerr << "\tOut of Range error: " << e.what() << std::endl;
+   }
+   std::cout << "***** Testing 'get' method error handling [Out of Range error] (negative index) *****" << std::endl;
+   try {
+      std::cout << "\tThe char at index -1: " << cv.get(-1) << std::endl;
    } catch(std::exception& e) {
       std::cerr << "\tOut of Range error: " << e.what() << std::endl;
    }
